@@ -1,0 +1,2 @@
+title #{title} - REPLACE THIS TITLE
+h1 REPLACE THIS HEADER

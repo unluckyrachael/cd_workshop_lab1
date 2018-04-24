@@ -1,0 +1,7 @@
+FROM node:0.12
+RUN mkdir -p /usr/app
+COPY . /usr/app
+WORKDIR /usr/app/site/
+RUN npm install
+EXPOSE 80
+CMD node server.js
