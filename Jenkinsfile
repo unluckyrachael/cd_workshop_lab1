@@ -31,14 +31,4 @@ node {
 
    // Upload the container
    sh "docker push registry.roundtower.io:5000/training1/lab1:${env.BUILD_NUMBER}"
-
-   // The next stage creates a file with our bulid information in it
-   stage 'Create S3 file'
-
-   sh "echo lab1:${env.BUILD_NUMBER} > path.txt"
-
-   // The next stage uploads a file to s3 which will tell the training instance what image to pull
-   stage 'Upload S3 file'
-
-   sh "aws s3 cp path.txt s3://cd-workshop/training1/"
 }
