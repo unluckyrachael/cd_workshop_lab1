@@ -58,3 +58,6 @@ fabric.properties
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+.idea/cd_workshop_lab1.iml
+doc/common/adoc/.DS_Store
+doc/common/adoc/images/.DS_Store

@@ -30,5 +30,5 @@ node {
    stage 'Upload Container'
 
    // Upload the container
-   sh "docker push registry.roundtower.io:5000/training1/lab1:${env.BUILD_NUMBER}"
+   sh "docker push registry.roundtower.io:5000/training99/lab1:${env.BUILD_NUMBER}"
 }
