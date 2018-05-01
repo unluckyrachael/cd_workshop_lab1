@@ -16,6 +16,12 @@ Students will need a computer with:
 
 == Lab 1
 // tag::procedure[]
+
+The goal of this lab is very simple. We will setup a pipeline on Jenkins that detects source changes.  When changes are detected (1), we will build a Docker image and upload it to a Docker registry (2)
+
+image:common/adoc/images/CD_Class_Topo_Lab1.png[]
+
+
 === Step 1: Login to GitHub
 * In your workspaces session, open a web browser and login to github: http://github.com
 
