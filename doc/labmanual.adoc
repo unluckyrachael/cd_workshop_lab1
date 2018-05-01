@@ -102,7 +102,9 @@ image:common/adoc/images/set_1_min_timer.png[]
 
 image:common/adoc/images/set_pipeline_options.png[]
 
-* At this point, you should see your pipeline run automatically. If so, you will see output something like this
+* At this point, you should see your pipeline run automatically. If not, click on `Build Now` on the upper left of the screen.
+
+* After the build, click on your `trainingX_lab1` link on the dashboard. You should see output something like this:
 
 image:common/adoc/images/pipeline_run_output.png[]
 
