@@ -11,7 +11,8 @@ Tennis Smith <tennis@roundtower.com>
 // tag::prerequisites[]
 Students will need a computer with:
 
-*	Web Browser (Chrome, Safari, Firefox)
+* An Amazon Workspaces login (see your instructor for details)
+
 // end::prerequisites[]
 
 == Lab 1
@@ -19,7 +20,7 @@ Students will need a computer with:
 
 The goal of this lab is very simple. We will setup a pipeline on Jenkins that detects source changes.  When changes are detected (1), we will build a Docker image and upload it to a Docker registry (2)
 
-image:common/adoc/images/CD_Class_Topo_Lab1.png[]
+image:common/adoc/images/CD_Workshop_Lab1_Topo.png[]
 
 
 === Step 1: Login to GitHub
