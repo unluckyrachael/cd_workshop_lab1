@@ -23,7 +23,7 @@ Lab 1 will cause a new docker image to be built.  Jenkins will poll GitHub
 Jenkins will pull the latest source (2 below) and build the image (3 below).  Once
 built, the image is then pushed to the docker registry (4 below).
 
-image:common/adoc/images/cd_workshop_Lab1_sequence.png[]
+image:common/adoc/images/cd_workshop_lab1_sequence.png[]
 
 
 === Step 1: Login to GitHub
