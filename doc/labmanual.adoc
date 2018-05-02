@@ -18,9 +18,12 @@ Students will need a computer with:
 == Lab 1
 // tag::procedure[]
 
-The goal of this lab is very simple. We will setup a pipeline on Jenkins that detects source changes.  When changes are detected (1), we will build a Docker image and upload it to a Docker registry (2)
+Lab 1 will cause a new docker image to be built.  Jenkins will poll GitHub
+(1 below). If there has been a source update (or if someone manually builds the pipeline), then
+Jenkins will pull the latest source (2 below) and build the image (3 below).  Once
+built, the image is then pushed to the docker registry (4 below).
 
-image:common/adoc/images/CD_Workshop_Lab1_Topo.png[]
+image:common/adoc/images/cd_workshop_Lab1_sequence.png[]
 
 
 === Step 1: Login to GitHub
