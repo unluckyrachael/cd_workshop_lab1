@@ -97,7 +97,7 @@ image:common/adoc/images/jenkins_new_item.png[]
 
 image:common/adoc/images/new_pipeline.png[]
 
-* Next, click on the `Poll SCM` option (about halfway down the page) and enter 5 asterisks in the field. This will cause Jenkins to look at GitHub once per minute for changes.  If changes are found, then the pipeline will run.
+* Next, click on the `Poll SCM` option (about halfway down the page) and enter 5 asterisks (with 1 space between each) in the field. This will cause Jenkins to look at GitHub once per minute for changes.  If changes are found, then the pipeline will run.
 
 image:common/adoc/images/set_1_min_timer.png[]
 
@@ -110,6 +110,58 @@ image:common/adoc/images/set_pipeline_options.png[]
 * After the build, click on your `trainingX_lab1` link on the dashboard. You should see output something like this:
 
 image:common/adoc/images/pipeline_run_output.png[]
+
+=== Step 7: Verify your docker image uploaded to the registry
+
+* Create a new pipeline by clicking on `New Item` on the Dashboard
+
+TIP | You can always get to the Dashboard by clicking on the word `Jenkins` in the upper left of the web page
+
+* Name your new pipeline `trainingX_lab1_check` (where 'X' is your training ID number)
+
+* Select `Pipeline` option.
+
+* Click `OK`
+
+* Scroll to the bottom of the next screen until you get to the `Pipeline` section
+
+* Leave the `Definition` field set to `Pipeline script`
+
+* Paste (or write) the following in the `Script` field
+
+[source]
+node {
+   sh 'curl http://registry.roundtower.io:5000/v2/training99/lab1/tags/list'
+}
+
+* Be sure to change `training99` to your training ID
+
+* Click the `Save` button to exit
+
+* Click on the `Build Now` button on the left.
+
+* Once the build completes, click on the build number in the `Build History` on the lower left of the screen.
+
+* Click on the `Console Output` on the left of the screen
+
+* You should see in the output provided something like the following with your training ID in it.
+```
+Started by user admin
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] node
+Running on Jenkins in /opt/bitnami/apps/jenkins/jenkins_home/workspace/training99_lab1_check
+[Pipeline] sh
+[training99_lab1_check] Running shell script
+...
+{"name":"training99/lab1","tags":["1"]}
+...
+Finished: SUCCESS
+```
+
+* The line `{"name":"training99/lab1","tags":["1"]}` means that version 1 of training99/lab1 is in the registry.  This verifies your docker image uploaded properly.
+
+
+
 
 // end::procedure[]
 
