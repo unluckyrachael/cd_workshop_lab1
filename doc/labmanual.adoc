@@ -135,14 +135,17 @@ node {
 }
 
 * Be sure to change `training99` to your training ID
+image:common/adoc/images/configure_script.png[]
 
 * Click the `Save` button to exit
 
 * Click on the `Build Now` button on the left.
 
 * Once the build completes, click on the build number in the `Build History` on the lower left of the screen.
+image:common/adoc/images/get_build_history.png[]
 
 * Click on the `Console Output` on the left of the screen
+image:common/adoc/images/get_console_output.png[]
 
 * You should see in the output provided something like the following with your training ID in it.
 ```
