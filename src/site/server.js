@@ -1,33 +1,21 @@
-/*
- * Module dependencies
- */
-var express = require('express')
-  , stylus = require('stylus')
-  , nib = require('nib')
+var http = require('http'); // Import Node.js core module
 
+var server = http.createServer(function (req, res) {   //create web server
+    if (req.url == '/') { //check the URL of the current request
+        
+        // set response header
+        res.writeHead(200, { 'Content-Type': 'text/html' }); 
+        
+        // set response content    
+        res.write('<html><body><p>TrainingXX page!</p></body></html>');
+        res.end();
+    
+    }
+    else
+        res.end('Invalid Request!');
 
-var app = express()
+});
 
-function compile(str, path) {
-  return stylus(str)
-    .set('filename', path)
-    .use(nib());
-}
+server.listen(80); //6 - listen for any incoming requests
 
-app.set('views', __dirname + '/views')
-app.set('view engine', 'jade')
-app.use(express.logger('dev'))
-app.use(stylus.middleware(
-  { src: __dirname + '/public'
-  , compile: compile
-  }
-))
-app.use(express.static(__dirname + '/public'))
-
-app.get('/', function (req, res) {
-  res.render('index',
-  { title : 'Home' }
-  )
-})
-
-app.listen(80)
+console.log('Node.js web server at port 80 is running..')
