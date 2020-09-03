@@ -11,15 +11,6 @@ node {
    // Get some code from a GitHub repository
    checkout scm
 
-   // Test the application
-   stage 'Run Unit Tests'
-
-   // Test the Layout
-   dir('tests') {sh "./layout-test.sh"}
-
-   // Test the Index Page
-   dir('tests') {sh "./index-test.sh"}
-
    // The next stage builds the Docker container for our site
    stage 'Build Container'
 
